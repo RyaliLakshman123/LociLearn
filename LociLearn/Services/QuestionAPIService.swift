@@ -1,39 +1,33 @@
+////
+////  QuestionAPIService.swift
+////  LociLearn
+////
+////  Created by Sameer Nikhil on 22/02/26.
+////
 //
-//  QuestionAPIService.swift
-//  LociLearn
+//import Foundation
 //
-//  Created by Sameer Nikhil on 22/02/26.
+//class QuestionAPIService {
 //
-
-import Foundation
-
-class QuestionAPIService {
-
-    func fetchQuestions(
-        amount: Int,
-        category: Int,
-        difficulty: String
-    ) async throws -> [Question] {
-
-        let urlString =
-        "https://locilearn-backend.onrender.com/api/questions?amount=\(amount)&category=\(category)&difficulty=\(difficulty)"
-
-        guard let url = URL(string: urlString) else { return [] }
-
-        let (data, _) = try await URLSession.shared.data(from: url)
-
-        let decoded = try JSONDecoder().decode(APIResponse.self, from: data)
-        return decoded.questions
-    }
-}
-
-struct APIResponse: Codable {
-    let questions: [Question]
-}
-
-enum Subject: Int {
-    case science = 17
-    case computers = 18
-    case math = 19
-    case history = 23
-}
+//    func fetchQuestions(
+//        amount: Int,
+//        category: Int,
+//        difficulty: String
+//    ) async throws -> [Question] {
+//
+//        let urlString =
+//        "https://locilearn-backend.onrender.com/api/questions?amount=\(amount)&category=\(category)&difficulty=\(difficulty)"
+//
+//        guard let url = URL(string: urlString) else { return [] }
+//
+//        let (data, _) = try await URLSession.shared.data(from: url)
+//
+//        let decoded = try JSONDecoder().decode(APIResponse.self, from: data)
+//        return decoded.questions
+//    }
+//}
+//
+//struct APIResponse: Codable {
+//    let questions: [Question]
+//}
+//

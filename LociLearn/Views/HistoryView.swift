@@ -17,7 +17,7 @@ struct HistoryView: View {
     var body: some View {
         NavigationStack {
             Group {
-                if viewModel.answeredQuestions.isEmpty {
+                if viewModel.allTimeAnsweredQuestions.isEmpty {
                     // Empty state
                     VStack(spacing: 16) {
                         Image(systemName: "tray")
@@ -41,8 +41,7 @@ struct HistoryView: View {
                                 .padding(.top, 4)
 
                             // Answered questions
-                            ForEach(Array(viewModel.answeredQuestions.enumerated()),
-                                    id: \.element.id) { index, answered in
+                            ForEach(Array(viewModel.allTimeAnsweredQuestions.enumerated()), id: \.element.id) { index, answered in
                                 HistoryCard(index: index + 1, answered: answered)
                                     .padding(.horizontal, 16)
                             }
@@ -70,16 +69,16 @@ private struct SummaryBannerView: View {
     @ObservedObject var viewModel: QuestionViewModel
 
     private var accuracy: Int {
-        guard !viewModel.answeredQuestions.isEmpty else { return 0 }
-        let correct = viewModel.answeredQuestions.filter(\.isCorrect).count
-        return Int((Double(correct) / Double(viewModel.answeredQuestions.count)) * 100)
+        guard !viewModel.allTimeAnsweredQuestions.isEmpty else { return 0 }
+        let correct = viewModel.allTimeAnsweredQuestions.filter(\.isCorrect).count
+        return Int((Double(correct) / Double(viewModel.allTimeAnsweredQuestions.count)) * 100)
     }
 
     var body: some View {
         HStack(spacing: 0) {
             statCell(value: "\(viewModel.score)", label: "Score", icon: "star.fill", color: .yellow)
             Divider().frame(height: 40)
-            statCell(value: "\(viewModel.answeredQuestions.count)", label: "Answered", icon: "checkmark.circle", color: .blue)
+            statCell(value: "\(viewModel.allTimeAnsweredQuestions.count)", label: "Answered", icon: "checkmark.circle", color: .blue)
             Divider().frame(height: 40)
             statCell(value: "\(accuracy)%", label: "Accuracy", icon: "chart.pie.fill", color: .green)
         }
@@ -298,7 +297,9 @@ struct QuizCompleteView: View {
                 }
 
                 Button {
-                    viewModel.fetchQuestions()
+                    viewModel.currentQuestionIndex = 0
+                    viewModel.score = 0
+                    viewModel.answeredQuestions = []
                     dismiss()
                 } label: {
                     Label("Play Again", systemImage: "arrow.clockwise")

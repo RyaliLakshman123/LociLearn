@@ -13,29 +13,31 @@ struct TriviaResponse: Decodable {
     let results: [TriviaQuestion]
 }
 
-// MARK: - Raw API Question
+// MARK: - Raw API Question (from OpenTrivia)
 struct TriviaQuestion: Decodable {
     let question: String
     let correct_answer: String
     let incorrect_answers: [String]
 }
 
-// MARK: - App Model
-struct Question: Identifiable, Codable {
-    let id = UUID()
+// MARK: - App Model (Cleaned + Shuffled)
+struct Question {
     let question: String
     let options: [String]
     let correctAnswer: String
-    
-    init(from apiModel: TriviaQuestion) {
-        self.question = apiModel.question.decodedHTML
-        self.correctAnswer = apiModel.correct_answer.decodedHTML
+    let topic: String
+
+    init(question: String,
+         options: [String],
+         correctAnswer: String,
+         topic: String) {
         
-        let allOptions = (apiModel.incorrect_answers + [apiModel.correct_answer])
-            .map { $0.decodedHTML }
-            .shuffled()
+        self.question = question
+        self.correctAnswer = correctAnswer
+        self.topic = topic
         
-        self.options = allOptions
+        // ✅ Automatically shuffle options
+        self.options = options.shuffled()
     }
 }
 
@@ -51,3 +53,4 @@ extension String {
         return attributed?.string ?? self
     }
 }
+

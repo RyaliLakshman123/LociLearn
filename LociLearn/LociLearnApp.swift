@@ -9,9 +9,45 @@ import SwiftUI
 
 @main
 struct LociLearnApp: App {
-    var body: some Scene { 
+
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding: Bool   = false
+    @AppStorage("hasCompletedSetup") private var hasCompletedSetup: Bool   = false
+    @AppStorage("username")          private var username:          String = ""
+
+        // ── TEMPORARY: delete after one run ──
+        init() {
+            UserDefaults.standard.removeObject(forKey: "hasSeenOnboarding")
+            UserDefaults.standard.removeObject(forKey: "hasCompletedSetup")
+            UserDefaults.standard.removeObject(forKey: "username")
+            UserDefaults.standard.removeObject(forKey: "selectedAvatar")
+        }
+        //
+    
+    var body: some Scene {
         WindowGroup {
-           HomeView()
+            ZStack {
+                if !hasSeenOnboarding {
+                    OnboardingView(hasSeenOnboarding: $hasSeenOnboarding)
+                        .transition(.asymmetric(
+                            insertion: .opacity,
+                            removal: .move(edge: .leading).combined(with: .opacity)
+                        ))
+                } else if !hasCompletedSetup {
+                    ProfileSetupView()
+                        .transition(.asymmetric(
+                            insertion: .move(edge: .trailing).combined(with: .opacity),
+                            removal: .move(edge: .leading).combined(with: .opacity)
+                        ))
+                } else {
+                    MainTabView()
+                        .transition(.asymmetric(
+                            insertion: .move(edge: .trailing).combined(with: .opacity),
+                            removal: .opacity
+                        ))
+                }
+            }
+            .animation(.easeInOut(duration: 0.45), value: hasSeenOnboarding)
+            .animation(.easeInOut(duration: 0.45), value: hasCompletedSetup)
         }
     }
 }

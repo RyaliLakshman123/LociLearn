@@ -10,9 +10,25 @@
 		0ED74BBA2F4A0114001DD718 /* LociLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LociLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0ED74C322F4DDDF4001DD718 /* Exceptions for "LociLearn" folder in "LociLearn" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Services/APIEndpoint.swift,
+				Services/QuestionAPIService.swift,
+				Services/QuizAPIService.swift,
+				Services/TriviaAPIService.swift,
+			);
+			target = 0ED74BB92F4A0114001DD718 /* LociLearn */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0ED74BBC2F4A0114001DD718 /* LociLearn */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0ED74C322F4DDDF4001DD718 /* Exceptions for "LociLearn" folder in "LociLearn" target */,
+			);
 			path = LociLearn;
 			sourceTree = "<group>";
 		};
