@@ -7,7 +7,7 @@ An immersive AR-powered learning app that makes knowledge interactive, spatial, 
 
 LociLearn transforms traditional quizzes into a spatial experience. Instead of tapping answers on a flat screen, users explore, aim, and interact with knowledge in augmented reality. Questions orbit around you. Learning becomes immersive, gamified, and memorable.
 
-
+----
 
 🚀 Features
 	•	AR Constellation Mode – Answer questions in a 360° immersive space
@@ -16,7 +16,7 @@ LociLearn transforms traditional quizzes into a spatial experience. Instead of t
 	•	Multiple Subjects – Solar System, Biology, Computer Science
 	•	Focus-Based Interaction – Aim. Hold. Answer.
 
-
+----
 
 🛠 Built With
 	•	SwiftUI
@@ -24,7 +24,7 @@ LociLearn transforms traditional quizzes into a spatial experience. Instead of t
 	•	RealityKit
 	•	MVVM Architecture
 
-
+----
 
 💡 Why LociLearn?
 
