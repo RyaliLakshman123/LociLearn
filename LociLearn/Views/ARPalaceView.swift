@@ -2,14 +2,14 @@
 //  ARPalaceView.swift
 //  LociLearn
 //
-//  Created by Sameer Nikhil on 21/02/26.
+//  Created by Lakshman Ryali on 21/02/26.
 //
 
 //
 //  ARPalaceView.swift
 //  LociLearn
 //
-//  Created by Sameer Nikhil on 21/02/26.
+//  Created by Lakshman Ryali on 21/02/26.
 //
 
 import SwiftUI

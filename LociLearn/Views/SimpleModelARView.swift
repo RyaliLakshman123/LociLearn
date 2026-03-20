@@ -2,7 +2,7 @@
 //  SimpleModelARView.swift
 //  LociLearn
 //
-//  Created by Sameer Nikhil on 24/02/26.
+//  Created by Lakshman Ryali on 24/02/26.
 //
 
 
@@ -10,7 +10,7 @@
 //  SimpleModelARView.swift
 //  LociLearn
 //
-//  Created by Sameer Nikhil on 24/02/26.
+//  Created by Lakshman Ryali on 24/02/26.
 //
 
 import SwiftUI

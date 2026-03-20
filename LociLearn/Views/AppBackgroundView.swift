@@ -2,7 +2,7 @@
 //  AppBackgroundView.swift
 //  LociLearn
 //
-//  Created by Sameer Nikhil on 26/02/26.
+//  Created by Lakshman Ryali on 26/02/26.
 //
 
 

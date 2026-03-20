@@ -2,7 +2,7 @@
 //  PlanetSelectionView.swift
 //  LociLearn
 //
-//  Created by Sameer Nikhil on 23/02/26.
+//  Created by Lakshman Ryali on 23/02/26.
 //
 
 
@@ -10,7 +10,7 @@
 //  PlanetSelectionView.swift
 //  LociLearn
 //
-//  Created by Sameer Nikhil on 23/02/26.
+//  Created by Lakshman Ryali on 23/02/26.
 //
 
 import SwiftUI

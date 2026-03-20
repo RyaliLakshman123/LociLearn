@@ -2,7 +2,7 @@
 //  StartViewModel.swift
 //  LociLearn
 //
-//  Created by Sameer Nikhil on 22/02/26.
+//  Created by Lakshman Ryali on 22/02/26.
 //
 
 import Foundation

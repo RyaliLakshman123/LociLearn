@@ -2,7 +2,7 @@
 //  ARTestView.swift
 //  LociLearn
 //
-//  Created by Sameer Nikhil on 24/02/26.
+//  Created by Lakshman Ryali on 24/02/26.
 //
 
 // MARK: - Paste this TEMPORARILY anywhere in your project and navigate to it
