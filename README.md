@@ -1,5 +1,6 @@
-<img width="1171" height="672" alt="Screenshot 2026-03-01 at 2 59 51 PM" src="https://github.com/user-attachments/assets/61ad30b5-eba0-44cb-99a7-ffaa119af0be" />[Uploading Screenshot 2026-03-01 at 2.59.51 PM.png…]()
+<img width="1171" height="672" alt="Screenshot 2026-03-01 at 2 59 51 PM" src="https://github.com/user-attachments/assets/61ad30b5-eba0-44cb-99a7-ffaa119af0be" />
 
+This App recived an Award for Apple WWDC 2026 
 
 🧠 LociLearn
 
